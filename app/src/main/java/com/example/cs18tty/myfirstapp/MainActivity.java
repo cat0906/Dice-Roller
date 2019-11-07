@@ -41,7 +41,9 @@ public class MainActivity extends AppCompatActivity {
         TextView tv = (TextView) this.findViewById(R.id.numberTextView); //(import class)
 
         int randomNum = roll_the_dice();
-        int guess = Integer.valueOf(guessInput.getText().toString());
+
+        String guessString = guessInput.getText().toString();
+        int guess = guessString.equals("") ? 0 : Integer.valueOf(guessString);
 
         if(randomNum == guess) {
             correctGuess();
